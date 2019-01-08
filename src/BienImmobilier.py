@@ -5,15 +5,20 @@
     """
 
 
-"""Classe Bien immobilier """
+"""Classe Bien immobilier 
+Attributs :
+-
+-
+-
+-
+Methodes :
+-
+-
+-
+-
+-
+"""
+
 class BienImmobilier(self):
     pass
 
-class Terrain(self):
-    pass
-
-class Maison(self):
-    pass
-
-class Appart(self):
-    pass
