@@ -4,6 +4,16 @@
 
     """
 
+
+"""Classe Bien immobilier """
 class BienImmobilier(self):
     pass
 
+class Terrain(self):
+    pass
+
+class Maison(self):
+    pass
+
+class Appart(self):
+    pass
