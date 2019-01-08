@@ -4,6 +4,21 @@
 
     """
 
+
+"""Classe Bien immobilier 
+Attributs :
+-
+-
+-
+-
+Methodes :
+-
+-
+-
+-
+-
+"""
+
 class BienImmobilier(self):
     pass
 
