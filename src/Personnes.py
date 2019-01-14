@@ -56,3 +56,10 @@ class Personnes:
     def __str__(self):
       return "Infos du client => Id Client : {}; Nom : {}; Prenom : {}; Téléphone : {}; Adresse : {}; Mail : {}".format(self.identifiant, self.nom, self.prenom, self.telephone, self.adresse, self.mail)
 
+
+"""Données de tests
+
+p = Personnes()
+p.ajouterClientPhysique()
+print("p :", p)"""
+
