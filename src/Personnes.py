@@ -24,21 +24,36 @@ class Personnes:
     clients = {}
 
     # Initialisation de la classe avec les 5 Attibuts
-    def __init__(self, pfnom = "", pfprenom = "", pfadresse = "",pftelephone = 0, pfmail = ""):
+    def __init__(self, pfnom = "", pfadresse = "",pftelephone = 0, pfmail = ""):
 
       self.nom = pfnom
-      self.prenom = pfprenom
       self.adresse = pfadresse
       self.telephone = pftelephone
       self.mail = pfmail
 
     #Permet d'ajouter un nouveau client
     def ajouterClientPhysique(self):
+        #Elements de l'adresse
+        res = []
+        numero = 0
+        chemin = ""
+        cp = 0
+        ville = ""
 
         #Entrée des données par l'utilisateur
         self.nom = input("Entrez le nom du nouveau client : ")
-        self.prenom = input("Entrez le prénom du nouveau client : ")
-        self.adresse = "pas d'adresse"
+
+        numero = int(input("Entrez le numéro d'adresse : "))
+        chemin = input("Entrez le nom de la rue : ")
+        cp = int(input("Entrez le code postal : "))
+        ville = input("Entrez la ville : ")
+
+        res.append(numero)
+        res.append(chemin)
+        res.append(cp)
+        res.append(ville)
+
+        self.adresse = res
         self.telephone = str(input("Entrez le téléphone du nouveau client : "))
         self.mail = input("Entrez le mail du nouveau client : ")
 
@@ -46,7 +61,7 @@ class Personnes:
         Personnes.identifiant = Personnes.identifiant + 1
 
         #Ajoute les élements dans le dictionnaire
-        self.clients[self.identifiant] = Personnes(self.nom, self.prenom,self.adresse,self.telephone,self.mail)
+        self.clients[self.identifiant] = Personnes(self.nom,self.adresse,self.telephone,self.mail)
 
     #Permet d'afficher les infos pour le client selectionné
     def afficherInfosClient(self, IdPersonne):
@@ -54,7 +69,7 @@ class Personnes:
 
     #Permet d'afficher les informations de l'objet
     def __str__(self):
-      return "Infos du client => Id Client : {}; Nom : {}; Prenom : {}; Téléphone : {}; Adresse : {}; Mail : {}".format(self.identifiant, self.nom, self.prenom, self.telephone, self.adresse, self.mail)
+      return "Infos du client => Id Client : {}; Nom : {}; Téléphone : {}; Adresse : {}; Mail : {}".format(self.identifiant, self.nom, self.prenom, self.telephone, self.adresse, self.mail)
 
 
 """Données de tests
