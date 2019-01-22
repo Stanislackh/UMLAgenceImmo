@@ -2,6 +2,7 @@
 
 from Personnes import Personnes
 from Mandat import Mandat
+from BienImmobilier import BienImmobilier
 
 class RDV:
 
@@ -10,11 +11,9 @@ class RDV:
 
     #Prend le rendez vous avec le client
     def PrendreRDV(self):
-        #Ajoute un client qui désire vendre
-        Personnes.ajouterClientPhysique()
-
         #Crée un mendat de vente
-        Mandat.vente()
+        Mandat.autoriser(self)
+        BienImmobilier.inscrire(self)
 
 
 

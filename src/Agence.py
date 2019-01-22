@@ -1,12 +1,31 @@
 """Création de l'agence"""
 
 from BienImmobilier import BienImmobilier
+from Personnes import Personnes
+from RDV import RDV
 
 class Agence:
 
     def __init__(self):
-        BienImmobilier.__init__(self)
+        pass
 
+
+    #Initialisation des types de personnes
+    vendeur ={}
+    acheteur = {}
+    keyA = 0
+    keyV = 0
+
+    #Inscrit un vendeur
+    def inscriptionVendeur(self):
+
+        #Incrémente la clé vendeur
+        Agence.keyA += 1
+        #Ajoute le client au dictionnaire
+        Agence.vendeur[Agence.keyA] = Personnes.ajouterVendeurPhysique(self)
+
+        #Prise de RendezVous pour le mandat
+        RDV.PrendreRDV()
 
     #Initialise la liste des annonces
     annonce = {}
@@ -20,7 +39,11 @@ class Agence:
         Agence.compt = Agence.compt + 1
         print(Agence.annonce)
 
+
+    def __str__(self):
+        return str(Agence.vendeur)
 """Test"""
 
 a = Agence()
-a.encoursRDV()
+a.inscriptionVendeur()
+print(a)

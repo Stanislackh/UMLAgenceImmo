@@ -61,7 +61,7 @@ class BienImmobilier:
 
 
 """TESTs"""
-
+"""
 b1 = BienImmobilier()
 b1.inscrire("loin", "de gauche", "trop", "vite", "maintenant", 1)
 print(b1.listeBien)
@@ -78,4 +78,4 @@ print(b3.listeBien)
 print(b3.num)
 
 print(b3)
-print(BienImmobilier.listeBien[0].orientation + "  res")
+print(BienImmobilier.listeBien[0].orientation + "  res")"""
