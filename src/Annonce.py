@@ -3,7 +3,7 @@
 class Annonce:
 
     def __init__(self):
-        self
+       pass
 
     #Récupère les données du vendeur lors du RDV
     def recupInfoRDV(self):

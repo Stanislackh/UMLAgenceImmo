@@ -67,15 +67,5 @@ b1.inscrire("loin", "de gauche", "trop", "vite", "maintenant", 1)
 print(b1.listeBien)
 print(b1.num)
 
-b2 = BienImmobilier()
-b2.inscrire("fffffff", "ffffff", "ffff", "fffffff", "ffffff", 2)
-print(b2.listeBien)
-print(b2.num)
-
-b3 = BienImmobilier()
-b3.inscrire("zzzzzzzz", "zzzzzz zzzzzzzz", "zzzzzzz", "zzzzzzzz", "zzzzzzzzz", 1234567)
-print(b3.listeBien)
-print(b3.num)
-
-print(b3)
+print(b1)
 print(BienImmobilier.listeBien[0].orientation + "  res")
