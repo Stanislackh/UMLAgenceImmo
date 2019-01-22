@@ -91,21 +91,14 @@ class BienImmobilier:
 
 
 """TESTs"""
-if __name__ == "__main__":
+"""
+b1 = BienImmobilier()
+b1.inscrire("loin", "de gauche", "trop", "vite", "maintenant", 1)
+print(b1.listeBien)
+print(b1.num)
+b1 = BienImmobilier()
+b1.inscrire("loin", "de gauche", "trop", "vite", "maintenant")
+print(b1.listeBien)
+print(b1.num) 
+print(BienImmobilier.listeBien[0].orientation + "  res")"""
 
-    b1 = BienImmobilier()
-    b1.inscrire("loin", "de gauche", "trop", "vite", "maintenant")
-    print(b1.listeBien)
-    print(b1.num)
-
-    b2 = BienImmobilier()
-    b2.inscrire("fffffff", "ffffff", "ffff", "fffffff", "ffffff")
-    print(b2.listeBien)
-    print(b2.num)
-
-    b3 = BienImmobilier()
-    b3.inscrire("zzzzzzzz", "zzzzzz zzzzzzzz", "zzzzzzz", "zzzzzzzz", "zzzzzzzzz")
-    print(b3.listeBien)
-    print(b3.num)
-
-    print(b3)

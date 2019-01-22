@@ -17,12 +17,6 @@ import re
 
 class Personnes:
 
-    # Initialise l'incrémentation des personnes
-    identifiant = 0
-
-    # Initialisation de la liste de clients
-    clients = {}
-
     # Initialisation de la classe avec les 5 Attibuts
     def __init__(self, pfnom = "", pfadresse = "",pftelephone = 0, pfmail = ""):
 
@@ -32,7 +26,7 @@ class Personnes:
       self.mail = pfmail
 
     #Permet d'ajouter un nouveau client
-    def ajouterClientPhysique(self):
+    def ajouterVendeurPhysique(self):
         #Elements de l'adresse
         res = []
         numero = 0
@@ -57,24 +51,15 @@ class Personnes:
         self.telephone = str(input("Entrez le téléphone du nouveau client : "))
         self.mail = input("Entrez le mail du nouveau client : ")
 
-        #Incrémentation du nombre de clients de 1
-        Personnes.identifiant = Personnes.identifiant + 1
-
-        #Ajoute les élements dans le dictionnaire
-        self.clients[self.identifiant] = Personnes(self.nom,self.adresse,self.telephone,self.mail)
-
-    #Permet d'afficher les infos pour le client selectionné
-    def afficherInfosClient(self, IdPersonne):
-        print(Personnes.clients[IdPersonne])
-
     #Permet d'afficher les informations de l'objet
     def __str__(self):
-      return "Infos du client => Id Client : {}; Nom : {}; Téléphone : {}; Adresse : {}; Mail : {}".format(self.identifiant, self.nom, self.prenom, self.telephone, self.adresse, self.mail)
+      return "Infos du client => Nom : {}; Téléphone : {}; Adresse : {}; Mail : {}".format(
+          self.nom, self.telephone, self.adresse, self.mail)
 
 
-"""Données de tests
-
+"""Données de tests"""
+"""
 p = Personnes()
-p.ajouterClientPhysique()
+p.ajouterVendeurPhysique()
 print("p :", p)"""
 
