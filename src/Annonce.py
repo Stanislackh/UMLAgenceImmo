@@ -1,5 +1,6 @@
 """Crée les Annonces"""
 
+
 class Annonce:
 
     def __init__(self):
@@ -7,3 +8,5 @@ class Annonce:
 
     #Récupère les données du vendeur lors du RDV
     def recupInfoRDV(self):
+     pass
+
