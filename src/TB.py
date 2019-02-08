@@ -1,12 +1,11 @@
-from BI import BienImmobilier
-import BI
+from BI import BI
 import re
 
 
-class Terrain(BienImmobilier):
+class Terrain(BI):
 
     def __init__(self):
-        BienImmobilier.__init__(self)
+        BI.__init__(self)
         self.superficie = 0
 
     def inscrireTerrain(self, superficie, adresse, prixDemande, dateVenteSouhait, dateDispo):
@@ -26,18 +25,19 @@ class Terrain(BienImmobilier):
 
             # complet passe à True si les données sont validées
             complet = True
+
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
         self.superficie = superficie
 
-        BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
+        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
         BI.BienImmobilier.listeBien[self.num] = self
 
-class Maison(BienImmobilier):
+class Maison(BI):
 
     def __init__(self):
-        BienImmobilier.__init__(self)
+        BI.__init__(self)
         self.nombrePieces = 0
         self.orientation = ""
 
@@ -64,13 +64,13 @@ class Maison(BienImmobilier):
         self.nombrePieces = nombrePieces
         self.orientation = orientation
 
-        BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
+        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
         BI.appendListe(self, self.num)
 
-class Appart(BienImmobilier):
+class Appart(BI):
 
     def __init__(self):
-        BienImmobilier.__init__(self)
+        BI.__init__(self)
         self.nombrePieces = 0
         self.etage = 0
         self.charges = 0
@@ -99,5 +99,5 @@ class Appart(BienImmobilier):
         self.etage = etage
         self.charges = charges
 
-        BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
+        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
         BI.appendListe(self, self.num)

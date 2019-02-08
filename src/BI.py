@@ -2,7 +2,7 @@ import TB
 
 import re
 
-class BienImmobilier:
+class BI:
     "classe definissant les biens immobiliers"
 
     # identifiant unique incrémenté à chaque instanciation
@@ -70,8 +70,8 @@ class BienImmobilier:
         if not erreur:
 
             # on incrémente la varible de classe identifiant et on l'affecte à l'identifiant de l'objet
-            self.num = BienImmobilier.num
-            BienImmobilier.num = BienImmobilier.num + 1
+            self.num = BI.num
+            BI.num = BI.num + 1
 
             # On affecte
             self.adresse = adresse
@@ -112,26 +112,34 @@ class BienImmobilier:
 
             TB.Appart.inscrireAppart(superficie, adresse, prixDemande, dateVenteSouhait, dateDispo)
 
-def afficherTousBiens_adresse():
-    for i in BienImmobilier.listeBien.keys():
-        yield BienImmobilier.listeBien[i].adresse
+    def afficherTousBiens_adresse(self):
+        for i in BI.listeBien.keys():
+            yield BI.listeBien[i].adresse
 
-def appendListe(bien, num):
-    BienImmobilier.listeBien[num] = bien
+    def appendListe(self, bien):
+        BI.listeBien[BI.num] = (bien)
+        BI.num += 1
+
 
 
 """TESTs"""
 if __name__ == "__main__":
 
+    a = BI()
+    a.appendListe("Joe")
+    print("je suis la liste incrémentée : " + str(BI.listeBien))
+
+
     b1 = TB.Maison()
     b1.inscrireMaison(3, "sud", "12 rue jeanjo 99666 toulon", "10000", "02/01/2018", "01/01/2019")
-    print(str(BienImmobilier.listeBien) + "  ,  listeBien après inscription de b1")
+    print(str(BI.listeBien) + "  ,  listeBien après inscription de b1")
     print(str(TB.Maison.listeBien) + "  ,  listeBien de Maison")
     print(str(b1.num) + ", num de b1")
 
     b2 = TB.Appart()
     b2.inscrireAppart(15, 3, 150, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
-    print(str(BienImmobilier.listeBien) + "  ,  listeBien après inscription de b2")
+    print(str(BI.listeBien) + "  ,  listeBien après inscription de b2")
+    print(str(TB.Appart.listeBien) + " , liste appart")
     print(str(b2.num) + ", num de b2")
 
     """
@@ -142,8 +150,8 @@ if __name__ == "__main__":
 
     print()"""
 
-    for i in afficherTousBiens_adresse():
-        print(str(i) + "    afficher tous les biens")
-
-    print(BienImmobilier.listeBien.keys())
+    # for i in afficherTousBiens_adresse():
+    #     print(str(i) + "    afficher tous les biens")
+    #
+    # print(BienImmobilier.listeBien.keys())
 
