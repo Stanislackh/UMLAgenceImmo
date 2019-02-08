@@ -1,4 +1,5 @@
-from bienImmobilier import BienImmobilier
+from BI import BienImmobilier
+import BI
 import re
 
 
@@ -31,7 +32,7 @@ class Terrain(BienImmobilier):
         self.superficie = superficie
 
         BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-
+        BI.BienImmobilier.listeBien[self.num] = self
 
 class Maison(BienImmobilier):
 
@@ -64,7 +65,7 @@ class Maison(BienImmobilier):
         self.orientation = orientation
 
         BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-        BienImmobilier.appendListe(88)
+        BI.appendListe(self, self.num)
 
 class Appart(BienImmobilier):
 
@@ -99,7 +100,4 @@ class Appart(BienImmobilier):
         self.charges = charges
 
         BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-
-
-
-
+        BI.appendListe(self, self.num)
