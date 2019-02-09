@@ -1,8 +1,6 @@
 """Classe Mendat"""
 
-from rendezVous import RDV
-
-class Mendat:
+class Mendat():
 
     def __init__(self, pfduree = 0):
         self.visite = False
