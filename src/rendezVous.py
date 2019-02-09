@@ -2,6 +2,7 @@
 
 import agence
 import TB
+from promesseVente import PromesseVente
 
 class RendezVous:
 
@@ -33,3 +34,10 @@ class RendezVous:
         elif type.lower() == "appartement":
             agence.Agence.listeBien[agence.Agence.keyB] = TB.Appart.inscrireAppart(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
+
+    # Prends RDV pour signer la promesse de vente
+    def signerPromesseVente(self):
+        pass
+        #récupérer l'acheteur et le vendeur
+        agence.Agence.vendeur
+        agence.Agence.acheteur

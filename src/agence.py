@@ -48,9 +48,6 @@ class Agence:
     #Initialise la liste des annonces
     annonce = {}
 
-    #Initialise le compteur de bien
-    compt = 0
-
     #Inscrit un Acheteur potentiel
     def inscriptionAcheteur(self, type = "r"):
 
@@ -70,21 +67,13 @@ class Agence:
                 #Ajoute le vendeur au dicotionnaire
                 Agence.acheteur[Agence.keyA] = Morale.ajouterPersonneMorale(self)
 
-    #Rentre les information lors du rendez vous
-    # def encoursRDV(self):
-    #     Agence.annonce[Agence.compt] = BienImmobilier.inscrire(self,"loin", "de gauche", "trop", "vite", "maintenant", 1)
-    #     Agence.compt = Agence.compt + 1
-    #     print(Agence.annonce)
-
-
     def __str__(self):
         return str(Agence.vendeur)
 
 
 """Test"""
-
-a = Agence()
-a.inscriptionVendeur()
-print(a.vendeur)
-
-print(a.listeBien)
+if __name__ == "__main__":
+    a = Agence()
+    a.inscriptionVendeur()
+    print(a.vendeur)
+    print(a.listeBien)
