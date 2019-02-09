@@ -1,4 +1,5 @@
-from .BienImmobilier import BienImmobilier
+from bienImmobilier import BienImmobilier
+import re
 
 
 class Terrain(BienImmobilier):
@@ -63,39 +64,42 @@ class Maison(BienImmobilier):
         self.orientation = orientation
 
         BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-
+        BienImmobilier.appendListe(88)
 
 class Appart(BienImmobilier):
 
     def __init__(self):
         BienImmobilier.__init__(self)
         self.nombrePieces = 0
-        self.orientation = ""
+        self.etage = 0
+        self.charges = 0
 
-        def inscrireTerrain(self, superficie, adresse, prixDemande, dateVenteSouhait, dateDispo):
-            BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
+    def inscrireAppart(self, nombrePieces, etage, charges, adresse, prixDemande, dateVenteSouhait, dateDispo):
 
-            # complet deviandra True quand les données seront validées, permet de boucler avant ça
-            complet = False
+        # complet deviandra True quand les données seront validées, permet de boucler avant ça
+        complet = False
 
-            # erreurpermet de savoir si il y a eu une itération. Si c'est le cas, on affiche le message d'erreur.
-            erreur = False
+        # erreurpermet de savoir si il y a eu une itération. Si c'est le cas, on affiche le message d'erreur.
+        erreur = False
 
-            while not complet:
+        while not complet:
 
-                if erreur:
-                    print("les informations sont incorrectes, veuillez réessayer SVP")
+            if erreur:
+                print("les informations sont incorrectes, veuillez réessayer SVP")
 
-                    # A FAIRE : vérifier la conformité des infos
+                # A FAIRE : vérifier la conformité des infos
 
-                # complet passe à True si les données sont validées
-                complet = True
-                # erreur passe à True quoi qu'il arrive
-                erreur = True
+            # complet passe à True si les données sont validées
+            complet = True
+            # erreur passe à True quoi qu'il arrive
+            erreur = True
 
-            self.superficie = superficie
+        self.nombrePieces = nombrePieces
+        self.etage = etage
+        self.charges = charges
 
-            # On inscrit le bien dans la liste
-            BienImmobilier.listeBien.append(self)
+        BienImmobilier.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
 
-    pass
+
+
+
