@@ -35,7 +35,7 @@ class Presse:
 
 
 """Tests"""
-
-a = Presse()
-print(a.ajoutPresse("joe", "joe"))
-a.supprimePresse("joe")
+#
+# a = Presse()
+# print(a.ajoutPresse("joe", "joe"))
+# a.supprimePresse("joe")

@@ -1,17 +1,8 @@
-"""Classe Mendat
-Attributs :
--
--
--
--
-Methodes :
--
--
--
--
--
-"""
-from BienImmobilier import BienImmobilier
+"""Classe Mendat"""
+
+#from BienImmobilier import BienImmobilier
+from Personnes import Personnes
+from Morale import Morale
 
 class Mendat:
 
@@ -19,7 +10,7 @@ class Mendat:
         self.visite = False
 
     def autorisation(self):
-        self.duree = int(input("Entrez le nombre de mois du mendat :"))
+        self.duree = int(input("Entrez la durée du mendat :"))
         self.visite = True
 
-        #ajouter aux annonces ?
+        return self.duree, self.visite
