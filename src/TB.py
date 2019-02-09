@@ -1,12 +1,14 @@
 from BI import BI
 import re
 
-
 class Terrain(BI):
+
+    genre = "terrain"
 
     def __init__(self, pfnum, pfsuperficie, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo):
         BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
         self.superficie = pfsuperficie
+
 
     def inscrireTerrain(self):
 
@@ -29,15 +31,14 @@ class Terrain(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.adresse = input("adresse")
-        self.prixDemande = input("prix demandé")
-        self.dateVenteSouhait = input("date de vente souhaité")
-        self.dateDispo = input("date de disponibilité")
-        self.superficie = input("superficie")
+        BI.ajouterBien(self)
+        self.superficie = input("Superficie : ")
 
         return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.superficie
 
 class Maison(BI):
+
+    genre = "maison"
 
     def __init__(self, pfnum, pfnombrePieces, pforientation, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo):
         BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
@@ -64,16 +65,15 @@ class Maison(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.adresse = input("adresse")
-        self.prixDemande = input("prix demandé")
-        self.dateVenteSouhait = input("date de vente souhaité")
-        self.dateDispo = input("date de disponibilité")
+        BI.ajouterBien(self)
         self.nombrePieces = input("nombre de pièces : ")
         self.orientation = input("Orientation de la maison : ")
 
         return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.nombrePieces, self.orientation
 
 class Appart(BI):
+
+    genre = "appartement"
 
     def __init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo, pfnbPiece, pfetage, pfcharges):
         BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
@@ -101,10 +101,7 @@ class Appart(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.adresse = input("adresse")
-        self.prixDemande = input("prix demandé")
-        self.dateVenteSouhait = input("date de vente souhaité")
-        self.dateDispo = input("date de disponibilité")
+        BI.ajouterBien(self)
         self.nombrePieces = input("Nombre de pièces : ")
         self.etage = input("nombre d'étages : ")
         self.charges = input("charges : ")
