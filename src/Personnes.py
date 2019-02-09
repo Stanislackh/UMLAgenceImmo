@@ -25,9 +25,9 @@ class Personnes:
         self.nom = input("Entrez le nom du nouveau client : ")
         self.telephone = str(input("Entrez le téléphone du nouveau client : "))
 
-        numero = int(input("Entrez le numéro d'adresse : "))
+        numero = input("Entrez le numéro d'adresse : ")
         chemin = input("Entrez le nom de la rue : ")
-        cp = int(input("Entrez le code postal : "))
+        cp = input("Entrez le code postal : ")
         ville = input("Entrez la ville : ")
 
         res.append(numero)
