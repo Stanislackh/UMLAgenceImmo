@@ -1,4 +1,4 @@
-from personnes import Personnes
+from Personnes import Personnes
 
 class Morale(Personnes):
 

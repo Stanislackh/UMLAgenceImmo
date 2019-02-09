@@ -1,12 +1,12 @@
 """Création de l'agence"""
 
 #from BienImmobilier import BienImmobilier
-from personnes import Personnes
-from morale import Morale
-from mendat import Mendat
+from Personnes import Personnes
+from Morale import Morale
+import Mendat
 from BI import BI
 import TB
-import RDV
+import rendezVous
 
 
 class Agence:
@@ -43,7 +43,7 @@ class Agence:
                 #Incrémente la clé vendeur
                 Agence.keyV += 1
                 #Ajoute le vendeur au dicotionnaire et ajoute la durée du mendat
-                Agence.vendeur[Agence.keyV] = Morale.ajouterPersonneMorale(self), Mendat.autorisation(self)
+                Agence.vendeur[Agence.keyV] = Morale.ajouterPersonneMorale(self)
 
         #Prise de RendezVous pour le mandat
         #RDV.PrendreRDV(self)
@@ -113,4 +113,7 @@ class Agence:
 
 a = Agence()
 a.inscriptionBienVendre()
+a.inscriptionBienVendre()
+
+
 print(a.listeBien)
