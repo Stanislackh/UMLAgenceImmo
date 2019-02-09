@@ -43,7 +43,6 @@ class Agence:
                 Agence.keyV += 1
                 #Ajoute le vendeur au dicotionnaire et ajoute la durée du mendat
                 Agence.vendeur[Agence.keyV] = Morale.ajouterPersonneMorale(self)
-
                 Agence.listeBien[Agence.keyB] = Agence.vendeur[Agence.keyV], RendezVous.prendreRDV(self)
 
     #Initialise la liste des annonces
