@@ -1,4 +1,6 @@
-from Personnes import Personnes
+"""Création personne morale"""
+
+from personnes import Personnes
 
 class Morale(Personnes):
 
