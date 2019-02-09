@@ -11,7 +11,6 @@ class Agence:
     def __init__(self):
         pass
 
-
     #Initialisation des types de personnes
     vendeur ={}
     keyV = 0
