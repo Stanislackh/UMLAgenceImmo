@@ -1,10 +1,13 @@
 """Création de l'agence"""
 
 #from BienImmobilier import BienImmobilier
-from Personnes import Personnes
-from Morale import Morale
-from Mendat import Mendat
-# from RDV import RDV
+from personnes import Personnes
+from morale import Morale
+from mendat import Mendat
+from BI import BI
+import TB
+import RDV
+
 
 class Agence:
 
@@ -16,13 +19,12 @@ class Agence:
     keyV = 0
     acheteur = {}
     keyA = 0
-
-
-    #Type de Vendeur ou Acheteur
-    type = "r"
+    #liste des biens
+    listeBien = {}
+    keyB = 0
 
     #Inscrit un vendeur
-    def inscriptionVendeur(self,type = 'r'):
+    def inscriptionVendeur(self,type= "r"):
 
         while (type != "physique") and (type != "morale"):
             type = input("Tapez physique pour inscrire une personne ou morale pour une entreprise : ")
@@ -33,7 +35,7 @@ class Agence:
                 #Incrémente la clé vendeur
                 Agence.keyV += 1
                 #Ajoute le vendeur au dictionnaire et ajoute la durée du mendat
-                Agence.vendeur[Agence.keyV] = Personnes.ajouterClient(self), Mendat.autorisation(self)
+                Agence.vendeur[Agence.keyV] = Personnes.ajouterClient(self), RDV.PrendreRDV(self)
 
             #Vendeur Morale
             elif type.lower() == "morale":
@@ -43,12 +45,8 @@ class Agence:
                 #Ajoute le vendeur au dicotionnaire et ajoute la durée du mendat
                 Agence.vendeur[Agence.keyV] = Morale.ajouterPersonneMorale(self), Mendat.autorisation(self)
 
-
-
-
         #Prise de RendezVous pour le mandat
-        # RDV.PrendreRDV()
-
+        #RDV.PrendreRDV(self)
 
     #Initialise la liste des annonces
     annonce = {}
@@ -56,6 +54,26 @@ class Agence:
     #Initialise le compteur de bien
     compt = 0
 
+    #Inscrit un bien
+    def inscriptionBienVendre(self,type = "r"):
+        #Incrémentation de la clé
+        Agence.keyB += 1
+
+        while (type != "terrain") and (type != "maison") and (type != "appartement"):
+            type = input("Type de bien, tapez le type de bien à inscrire : appart, maison ou terrain : ")
+
+        if type.lower() == "terrain":
+            Agence.listeBien[Agence.keyB] = TB.Terrain.inscrireTerrain(self)
+            print("Dico bon : " + str(Agence.listeBien))
+
+
+        elif type.lower() == "maison":
+            Agence.listeBien[Agence.keyB] = TB.Maison.inscrireMaison(self)
+            print("Dico bon : " + str(Agence.listeBien))
+
+        elif type.lower() == "appartement":
+            Agence.listeBien[Agence.keyB] = TB.Appart.inscrireAppart(self)
+            print("Dico bon : " + str(Agence.listeBien))
 
     #Inscrit un Acheteur potentiel
     def inscriptionAcheteur(self):
@@ -87,8 +105,6 @@ class Agence:
     #     print(Agence.annonce)
 
 
-
-
     def __str__(self):
         return str(Agence.vendeur)
 
@@ -96,5 +112,5 @@ class Agence:
 """Test"""
 
 a = Agence()
-a.inscriptionVendeur()
-print(a.vendeur)
+a.inscriptionBienVendre()
+print(a.listeBien)
