@@ -1,6 +1,5 @@
 """Creation de la classe RDV"""
-import Mendat
-import Agence
+
 class RDV:
 
     #Prend le rendez vous avec le client
