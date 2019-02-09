@@ -11,4 +11,24 @@ class Mendat:
         self.duree = input("Entrez la durée du mendat :")
         self.visite = True
 
-        return self.duree, self.visite
+    def inscrireMandat(self):
+
+        #complet deviandra True quand les données seront validées, permet de boucler avant ça
+        complet = False
+
+
+        erreur = False
+
+        while not complet:
+
+            if erreur:
+                print("les informations sont incorrectes, veullez réessayer SVP")
+
+                # A FAIRE : vérifier la conformité des infos: 1 propriétaire et 1 bien immobilier non possédé
+
+            # complet passe à True si les données sont validées
+            complet = True
+            # erreur passe à True
+            erreur = True
+
+
