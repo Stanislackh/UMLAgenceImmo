@@ -1,16 +1,5 @@
-"""Classe Voeux
-Attributs :
--
--
--
--
-Methodes :
--
--
--
--
--
-"""
+"""Classe Voeux"""
 
-class Voeux(self):
+
+class Voeux:
     pass

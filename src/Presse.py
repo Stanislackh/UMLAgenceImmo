@@ -9,7 +9,7 @@ class Presse:
         pass
 
     #Ajoute un article de presse
-    def ajouterPresse(self, pftitre, pfbien):
+    def ajoutPresse(self, pftitre, pfbien):
 
         #Incrémente la clé
         Presse.key += 1
@@ -19,7 +19,7 @@ class Presse:
         print(Presse.presse)
 
     #supprime un article existant
-    def supprimerPresse(self, pftitre):
+    def supprimePresse(self, pftitre):
         print(Presse.presse.get(self))
         for i in Presse.presse.values():
             key = Presse.presse.keys()
@@ -35,7 +35,7 @@ class Presse:
 
 
 """Tests"""
-
-a = Presse()
-print(a.ajouterPresse("joe", "joe"))
-a.supprimerPresse("joe")
+#
+# a = Presse()
+# print(a.ajoutPresse("joe", "joe"))
+# a.supprimePresse("joe")
