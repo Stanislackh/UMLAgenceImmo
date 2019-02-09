@@ -1,11 +1,12 @@
 """Création de l'agence"""
 
 #from BienImmobilier import BienImmobilier
-from personnes import Personnes
-from morale import Morale
+from Personnes import Personnes
+from Morale import Morale
+import Mendat
 from BI import BI
 import TB
-from rendezVous import RDV
+import rendezVous
 
 
 class Agence:
