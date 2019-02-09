@@ -4,11 +4,11 @@ import re
 
 class Terrain(BI):
 
-    def __init__(self):
-        BI.__init__(self)
-        self.superficie = 0
+    def __init__(self, pfnum, pfsuperficie, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo):
+        BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
+        self.superficie = pfsuperficie
 
-    def inscrireTerrain(self, superficie, adresse, prixDemande, dateVenteSouhait, dateDispo):
+    def inscrireTerrain(self):
 
         # complet deviandra True quand les données seront validées, permet de boucler avant ça
         complet = False
@@ -29,19 +29,22 @@ class Terrain(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.superficie = superficie
+        self.adresse = input("adresse")
+        self.prixDemande = input("prix demandé")
+        self.dateVenteSouhait = input("date de vente souhaité")
+        self.dateDispo = input("date de disponibilité")
+        self.superficie = input("superficie")
 
-        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-        BI.BienImmobilier.listeBien[self.num] = self
+        return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.superficie
 
 class Maison(BI):
 
-    def __init__(self):
-        BI.__init__(self)
-        self.nombrePieces = 0
-        self.orientation = ""
+    def __init__(self, pfnum, pfnombrePieces, pforientation, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo):
+        BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
+        self.nombrePieces = pfnombrePieces
+        self.orientation = pforientation
 
-    def inscrireMaison(self, nombrePieces, orientation, adresse, prixDemande, dateVenteSouhait, dateDispo):
+    def inscrireMaison(self):
 
         # complet deviandra True quand les données seront validées, permet de boucler avant ça
         complet = False
@@ -61,21 +64,24 @@ class Maison(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.nombrePieces = nombrePieces
-        self.orientation = orientation
+        self.adresse = input("adresse")
+        self.prixDemande = input("prix demandé")
+        self.dateVenteSouhait = input("date de vente souhaité")
+        self.dateDispo = input("date de disponibilité")
+        self.nombrePieces = input("nombre de pièces : ")
+        self.orientation = input("Orientation de la maison : ")
 
-        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-        BI.appendListe(self, self.num)
+        return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.nombrePieces, self.orientation
 
 class Appart(BI):
 
-    def __init__(self):
-        BI.__init__(self)
-        self.nombrePieces = 0
-        self.etage = 0
-        self.charges = 0
+    def __init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo, pfnbPiece, pfetage, pfcharges):
+        BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
+        self.nombrePieces = pfnbPiece
+        self.etage = pfetage
+        self.charges = pfcharges
 
-    def inscrireAppart(self, nombrePieces, etage, charges, adresse, prixDemande, dateVenteSouhait, dateDispo):
+    def inscrireAppart(self):
 
         # complet deviandra True quand les données seront validées, permet de boucler avant ça
         complet = False
@@ -95,9 +101,13 @@ class Appart(BI):
             # erreur passe à True quoi qu'il arrive
             erreur = True
 
-        self.nombrePieces = nombrePieces
-        self.etage = etage
-        self.charges = charges
+        self.adresse = input("adresse")
+        self.prixDemande = input("prix demandé")
+        self.dateVenteSouhait = input("date de vente souhaité")
+        self.dateDispo = input("date de disponibilité")
+        self.nombrePieces = input("Nombre de pièces : ")
+        self.etage = input("nombre d'étages : ")
+        self.charges = input("charges : ")
 
-        BI.inscrire(self, adresse, prixDemande, dateVenteSouhait, dateDispo)
-        BI.appendListe(self, self.num)
+
+        return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.nombrePieces, self.etage, self.charges

@@ -1,5 +1,4 @@
 import TB
-
 import re
 
 class BI:
@@ -11,13 +10,13 @@ class BI:
     # Liste des biens inscrits
     listeBien = {}
 
-    def __init__(self):
+    def __init__(self, pfnum = 0, pfadresse ="3 rue picard 11111 cypres" , pfprixDemande = 0, pfdateVenteSouhait = "01/01/2018", pfdateDispo = "01/01/2018"):
         "Un bien a un identifiant unique, une adresse, une orientation, un prix demandé, un date de vente souhaitée, une disponibilité, et un nombre de pièces = 0 si il s'agit d'un terrain"
-        self.num = 0
-        self.adresse = ""
-        self.prixDemande = 0
-        self.dateVenteSouhait = ""
-        self.dateDispo = ""
+        self.num = pfnum
+        self.adresse = pfadresse
+        self.prixDemande = pfprixDemande
+        self.dateVenteSouhait = pfdateVenteSouhait
+        self.dateDispo = pfdateDispo
 
     def __str__(self):
         return "bien immobilier n°" + str(self.num) + " adresse: " + self.adresse
@@ -82,73 +81,64 @@ class BI:
         else:
             print("il y a eu une erreur")
 
-    def inscription(self, TB):
+    def inscription(self, type):
 
-        if TB.lower() == "terrain":
-            adresse = input("adresse")
-            prixDemande = input("prix demandé")
-            dateVenteSouhait = input("date de vente souhaité")
-            dateDispo = input("date de disponibilité")
-            superficie = input("superficie")
+        if type.lower() == "terrain":
+            BI.listeBien[BI.num] = TB.Terrain.inscrireTerrain(self)
+            print("Dico bon : " + str(BI.listeBien))
+            BI.num += 1
 
-            TB.Terrain.inscrireTerrain(superficie, adresse, prixDemande, dateVenteSouhait, dateDispo)
+        elif type.lower() == "maison":
+            BI.listeBien[BI.num] = TB.Maison.inscrireMaison(self)
+            print("Dico bon : " + str(BI.listeBien))
+            BI.num += 1
 
-        elif TB.lower() == "maison":
-            adresse = input("adresse")
-            prixDemande = input("prix demandé")
-            dateVenteSouhait = input("date de vente souhaité")
-            dateDispo = input("date de disponibilité")
-            superficie = input("superficie")
+        elif type.lower() == "appartement":
+            BI.listeBien[BI.num] = TB.Appart.inscrireAppart(self)
+            print("Dico bon : " + str(BI.listeBien))
+            BI.num += 1
 
-            TB.Maison.inscrireMaison(superficie, adresse, prixDemande, dateVenteSouhait, dateDispo)
-
-        elif TB.lower() == "appartement":
-
-            adresse = input("adresse")
-            prixDemande = input("prix demandé")
-            dateVenteSouhait = input("date de vente souhaité")
-            dateDispo = input("date de disponibilité")
-            superficie = input("superficie")
-
-            TB.Appart.inscrireAppart(superficie, adresse, prixDemande, dateVenteSouhait, dateDispo)
 
     def afficherTousBiens_adresse(self):
         for i in BI.listeBien.keys():
             yield BI.listeBien[i].adresse
 
-    def appendListe(self, bien):
-        BI.listeBien[BI.num] = (bien)
+    def appendListe(self, adresse, prixDemande, dateVenteSouhait, dateDispo):
+        BI.listeBien[BI.num] = TB.TB.inscrireTerrain(self)
         BI.num += 1
-
 
 
 """TESTs"""
 if __name__ == "__main__":
 
-    a = BI()
-    a.appendListe("Joe")
-    print("je suis la liste incrémentée : " + str(BI.listeBien))
+    # a = BI()
+    # a.appendListe(200, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
+    # print("je suis la liste incrémentée : " + str(BI.listeBien))
 
 
-    b1 = TB.Maison()
-    b1.inscrireMaison(3, "sud", "12 rue jeanjo 99666 toulon", "10000", "02/01/2018", "01/01/2019")
+    b1 = BI()
+    b1.inscription("terrain")
+
+    #b1.appendListe(200, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
     print(str(BI.listeBien) + "  ,  listeBien après inscription de b1")
-    print(str(TB.Maison.listeBien) + "  ,  listeBien de Maison")
+    print(str(TB.Terrain.listeBien) + "  ,  listeBien de Terrain")
     print(str(b1.num) + ", num de b1")
 
-    b2 = TB.Appart()
-    b2.inscrireAppart(15, 3, 150, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
+    b2 = BI()
+    #b2.inscription(15, 3, 150, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
+    b2.inscription("maison")
+
     print(str(BI.listeBien) + "  ,  listeBien après inscription de b2")
-    print(str(TB.Appart.listeBien) + " , liste appart")
+    print(str(TB.Maison.listeBien) + " , liste appart")
     print(str(b2.num) + ", num de b2")
 
-    """
-    b3 = BienImmobilier()
-    b3.inscrire("1 boulevard russe 66699 exenprovencesurmarne", "3336667", "02/01/2018", "01/01/2019")
-    print(str(BienImmobilier.listeBien) + "  ,  listeBien après inscription de b3")
-    print(str(b3.num) + ", num de b3")
+    b3 = BI()
+    # b2.inscription(15, 3, 150, "3 rue picard 11111 cypres", "200000", "02/01/2018", "01/01/2019")
+    b3.inscription("appartement")
 
-    print()"""
+    print(str(BI.listeBien) + "  ,  listeBien après inscription de b3")
+    print(str(TB.Maison.listeBien) + " , liste appart")
+    print(str(b3.num) + ", num de b3")
 
     # for i in afficherTousBiens_adresse():
     #     print(str(i) + "    afficher tous les biens")

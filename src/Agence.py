@@ -97,4 +97,5 @@ class Agence:
 
 a = Agence()
 a.inscriptionVendeur()
+a.inscriptionVendeur()
 print(a.vendeur)
