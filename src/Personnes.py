@@ -1,5 +1,6 @@
 """Classe Personnes"""
 
+from mendat import Mendat
 import re
 
 class Personnes:
@@ -39,6 +40,10 @@ class Personnes:
         self.mail = input("Entrez le mail du nouveau client : ")
 
         return self.nom, self.telephone, self.adresse, self.mail
+
+    #Ajouyter le mendat
+    def ajouterMendat(self):
+        return Mendat.autorisation(self)
 
     #Permet d'afficher les informations de l'objet
     def __str__(self):
