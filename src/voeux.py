@@ -75,6 +75,7 @@ class Voeux:
                         if (i[1][1][1] == j[2]) and (i[1][1][6] == j[3]) and (i[1][1][4] == j[4]):
                             print("Le bien correspond aux recherches")
                             Mendat.autorisation(self)
+
                             #Ajoute les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
                             Voeux.infos.append(j[1][2])
                             Voeux.infos.append(i[0][0][2])
@@ -94,6 +95,8 @@ class Voeux:
                         #prix souhaité              Surface souhaité
                         if (i[1][1][1] == j[2]) and (i[1][1][4] == j[3]):
                             print("Le bien correspond aux recherches")
+                            Mendat.autorisation(self)
+
                             #Ajoute les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
                             infos.append(j[1][2])
                             infos.append(i[0][0][2])
@@ -112,6 +115,8 @@ class Voeux:
                         # prix souhaité              Nombre de pièces souhaité
                         if (i[1][1][1] == j[2]) and (i[1][1][4] == j[3]):
                             print("Le bien correspond aux recherches")
+                            Mendat.autorisation(self)
+
                             #Ajoute les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
                             infos.append(j[1][2])
                             infos.append(i[0][0][2])
