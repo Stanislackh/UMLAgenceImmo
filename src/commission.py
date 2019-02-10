@@ -1,6 +1,6 @@
 """Classe qui gère les commissions"""
 
-from BI import BI
+from agence import Agence
 
 class Commission:
 
@@ -14,7 +14,6 @@ class Commission:
         #Récupérer le bien en question
         self.commissionNotaire *= 0.07
         print("Le notaire a versé une commission de : " + str(self.commissionNotaire))
-
 
 
 if __name__ == "__main__":

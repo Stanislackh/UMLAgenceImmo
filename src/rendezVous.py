@@ -2,8 +2,7 @@
 
 import agence
 import TB
-
-#from promesseVente import PromesseVente
+import promesseVente
 
 class RendezVous:
 
@@ -35,3 +34,19 @@ class RendezVous:
         elif type.lower() == "appartement":
             agence.Agence.listeBien[agence.Agence.keyB] = type, TB.Appart.inscrireAppart(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
+
+
+    def confirmerVente(self, rep="r"):
+
+        print("Rendez-Vous pris !")
+
+        while (rep.lower() != "oui") and (rep.lower() != "non"):
+            rep = input("Voulez vous acheter ce bien ? : ")
+
+        if rep == "oui":
+            print("achat")
+            #signature de la promesse de vente
+            promesseVente.PromesseVente.signature(self)
+
+        if rep == "non":
+            print("a plus tard")
