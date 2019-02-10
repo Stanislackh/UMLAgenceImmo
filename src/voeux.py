@@ -98,6 +98,7 @@ class Voeux:
                             infos.append(j[1][2])
                             infos.append(i[0][0][2])
                             infos.append(i[1][1])
+                            rendezVous.RendezVous.confirmerVente(self)
                             return Voeux.infos
 
                         else:
@@ -115,7 +116,7 @@ class Voeux:
                             infos.append(j[1][2])
                             infos.append(i[0][0][2])
                             infos.append(i[1][1])
-                            print(Voeux.infos)
+                            rendezVous.RendezVous.confirmerVente(self)
                             return Voeux.infos
 
                         else:
