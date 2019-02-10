@@ -29,12 +29,14 @@ class Agence:
             #Vendeur Physique
             if type.lower() == "physique":
 
+
                 #Incrémente les clés vendeur et bien
                 Agence.keyV += 1
 
                 #Ajoute le vendeur au dictionnaire et ajoute la durée du mendat
                 Agence.vendeur[Agence.keyV] = Personnes.ajouterClient(self), Personnes.ajouterMendat(self)
                 Agence.listeBien[Agence.keyB] = Agence.vendeur[Agence.keyV], rendezVous.RendezVous.prendreRDV(self)
+
 
             #Vendeur Morale
             elif type.lower() == "morale":
@@ -44,6 +46,7 @@ class Agence:
                 #Ajoute le vendeur au dicotionnaire et ajoute la durée du mendat
                 Agence.vendeur[Agence.keyV] = Morale.ajouterPersonneMorale(self)
                 Agence.listeBien[Agence.keyB] = Agence.vendeur[Agence.keyV], rendezVous.RendezVous.prendreRDV(self)
+
 
     #Initialise la liste des annonces
     annonce = {}
@@ -77,3 +80,4 @@ if __name__ == "__main__":
     a.inscriptionVendeur()
     print(a.vendeur)
     print(a.listeBien)
+
