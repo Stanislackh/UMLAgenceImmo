@@ -40,8 +40,9 @@ class Maison(BI):
 
     genre = "maison"
 
-    def __init__(self, pfnum, pfnombrePieces, pforientation, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo):
+    def __init__(self, pfnum, pfnombrePieces, pforientation, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo, pfSurface):
         BI.__init__(self, pfnum, pfadresse, pfprixDemande, pfdateVenteSouhait, pfdateDispo)
+        self.surfaceHabitable = pfSurface
         self.nombrePieces = pfnombrePieces
         self.orientation = pforientation
 
@@ -66,10 +67,11 @@ class Maison(BI):
             erreur = True
 
         BI.ajouterBien(self)
+        self.surfaceHabitable = input("Surface habitable : ")
         self.nombrePieces = input("nombre de pièces : ")
         self.orientation = input("Orientation de la maison : ")
 
-        return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.nombrePieces, self.orientation
+        return self.adresse, self.prixDemande, self.dateVenteSouhait, self.dateDispo, self.nombrePieces, self.orientation, self.surfaceHabitable
 
 class Appart(BI):
 
