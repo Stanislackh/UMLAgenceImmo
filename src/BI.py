@@ -3,20 +3,18 @@ import re
 class BI:
     "classe definissant les biens immobiliers"
 
-    def __init__(self, pfnum = 0, pfadresse ="3 rue picard 11111 cypres" , pfprixDemande = 0, pfdateVenteSouhait = "01/01/2018", pfdateDispo = "01/01/2018"):
+    def __init__(self, pfnum = 0, pfadresse ="3 rue picard 11111 cypres" , pfprixDemande = 10000, pfdateVenteSouhait = "01/01/2018", pfdateDispo = "01/01/2018"):
         self.adresse = pfadresse
         self.prixDemande = pfprixDemande
         self.dateVenteSouhait = pfdateVenteSouhait
         self.dateDispo = pfdateDispo
 
     #Ajoute un bien selon le type
-    def ajouterBien(self, pfnum = 0, pfadresse ="3 rue picard 11111 cypres" , pfprixDemande = 0, pfdateVenteSouhait = "01/01/2018", pfdateDispo = "01/01/2018"):
+    def ajouterBien(self, pfnum = 0, pfadresse ="3 rue picard 11111 cypres" , pfprixDemande = 10000, pfdateVenteSouhait = "01/01/2018", pfdateDispo = "01/01/2018"):
         self.adresse = input("adresse : ")
         self.prixDemande = input("prix demandé : ")
         self.dateVenteSouhait = input("date de vente souhaité : ")
         self.dateDispo = input("date de disponibilité : ")
-
-
 
     def afficherTousBiens_adresse(self):
         for i in BI.listeBien.keys():

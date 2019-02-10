@@ -3,6 +3,8 @@
 import agence
 import TB
 
+#from promesseVente import PromesseVente
+
 class RendezVous:
 
     #Prend le rendez vous avec le client
@@ -12,7 +14,7 @@ class RendezVous:
         type = "r"
 
         while (type.lower() != "appart") and (type.lower() != "maison") and (type.lower() != "terrain"):
-            type = input("Type de bien, tapez le type de bien a inscrire : appart, maison ou terrain : ")
+            type = input("Type de bien, tapez le type de bien a inscrire : appartement, maison ou terrain : ")
 
         return RendezVous.inscriptionBienVendre(self, type)
 
