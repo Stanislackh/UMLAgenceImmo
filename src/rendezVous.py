@@ -35,7 +35,7 @@ class RendezVous:
             agence.Agence.listeBien[agence.Agence.keyB] = type, TB.Appart.inscrireAppart(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
 
-
+    #Confime la vente du bien
     def confirmerVente(self, rep="r"):
 
         print("Rendez-Vous pris !")
