@@ -11,4 +11,5 @@ class Mendat():
 
     def autorisation(self):
         self.visite = True
+        print("visite = " + str(self.visite))
         return self.visite
