@@ -2,7 +2,7 @@
 
 from personnes import Personnes
 from agence import Agence
-import mendat
+from mendat import Mendat
 
 class Voeux:
 
@@ -70,7 +70,10 @@ class Voeux:
                         #prix souhaité              Surface souhaité          nombmre de pièces
                         if (i[1][1][1] == j[2]) and (i[1][1][6] == j[3]) and (i[1][1][4] == j[4]):
                             print("Le bien correspond aux recherches")
-                            return j[1][2], i[0][0][2]
+                            #Autorise le bien a être visité
+                            Mendat.autorisation(self)
+                            #Renvoi les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
+                            return j[1][2], i[0][0][2], i[1][1]
                         else:
                             print("un critère ne correspond pas")
 
@@ -84,7 +87,10 @@ class Voeux:
                         #prix souhaité              Surface souhaité
                         if (i[1][1][1] == j[2]) and (i[1][1][4] == j[3]):
                             print("Le bien correspond aux recherches")
-                            return j[1][2], i[0][0][2]
+                            # Autorise le bien a être visité
+                            Mendat.autorisation(self)
+                            # Renvoi les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
+                            return j[1][2], i[0][0][2], i[1][1]
                         else:
                             print("un critère ne correspond pas")
 
@@ -96,11 +102,12 @@ class Voeux:
                         # prix souhaité              Nombre de pièces souhaité
                         if (i[1][1][1] == j[2]) and (i[1][1][4] == j[3]):
                             print("Le bien correspond aux recherches")
-                            return j[1][2], i[0][0][2]
+                            # Autorise le bien a être visité
+                            Mendat.autorisation(self)
+                            # Renvoi les coordonnées du l'acheteur du vendeur et les infos sur le bien du vendeur
+                            return j[1][2], i[0][0][2], i[1][1]
                         else:
                             print("Un critère ne convient pas")
-
-
 
 
 if __name__ == "__main__":

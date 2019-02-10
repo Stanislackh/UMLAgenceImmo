@@ -43,7 +43,7 @@ class Personnes:
 
     #Ajouyter le mendat
     def ajouterMendat(self):
-        return Mendat.autorisation(self)
+        return Mendat.duree(self)
 
     #Permet d'afficher les informations de l'objet
     def __str__(self):
