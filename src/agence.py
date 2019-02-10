@@ -29,7 +29,6 @@ class Agence:
             #Vendeur Physique
             if type.lower() == "physique":
 
-
                 #Incrémente les clés vendeur et bien
                 Agence.keyV += 1
 
