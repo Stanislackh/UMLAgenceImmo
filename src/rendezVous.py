@@ -13,7 +13,7 @@ class RendezVous:
         #Inscrit le bien a vendre
         type = "r"
 
-        while (type.lower() != "appart") and (type.lower() != "maison") and (type.lower() != "terrain"):
+        while (type.lower() != "appartement") and (type.lower() != "maison") and (type.lower() != "terrain"):
             type = input("Type de bien, tapez le type de bien a inscrire : appartement, maison ou terrain : ")
 
         return RendezVous.inscriptionBienVendre(self, type)
@@ -25,13 +25,13 @@ class RendezVous:
         agence.Agence.keyB += 1
 
         if type.lower() == "terrain":
-            agence.Agence.listeBien[agence.Agence.keyB] = TB.Terrain.inscrireTerrain(self)
+            agence.Agence.listeBien[agence.Agence.keyB] = type, TB.Terrain.inscrireTerrain(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
 
         elif type.lower() == "maison":
-            agence.Agence.listeBien[agence.Agence.keyB] = TB.Maison.inscrireMaison(self)
+            agence.Agence.listeBien[agence.Agence.keyB] = type, TB.Maison.inscrireMaison(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
 
         elif type.lower() == "appartement":
-            agence.Agence.listeBien[agence.Agence.keyB] = TB.Appart.inscrireAppart(self)
+            agence.Agence.listeBien[agence.Agence.keyB] = type, TB.Appart.inscrireAppart(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
