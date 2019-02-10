@@ -44,7 +44,6 @@ class RendezVous:
             rep = input("Voulez vous acheter ce bien ? : ")
 
         if rep == "oui":
-            print("achat")
             #signature de la promesse de vente
             promesseVente.PromesseVente.signature(self)
 
