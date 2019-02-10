@@ -2,7 +2,8 @@
 
 import agence
 import TB
-from promesseVente import PromesseVente
+
+#from promesseVente import PromesseVente
 
 class RendezVous:
 
@@ -13,7 +14,7 @@ class RendezVous:
         type = "r"
 
         while (type.lower() != "appart") and (type.lower() != "maison") and (type.lower() != "terrain"):
-            type = input("Type de bien, tapez le type de bien a inscrire : appart, maison ou terrain : ")
+            type = input("Type de bien, tapez le type de bien a inscrire : appartement, maison ou terrain : ")
 
         return RendezVous.inscriptionBienVendre(self, type)
 
@@ -34,10 +35,3 @@ class RendezVous:
         elif type.lower() == "appartement":
             agence.Agence.listeBien[agence.Agence.keyB] = TB.Appart.inscrireAppart(self)
             return agence.Agence.listeBien[agence.Agence.keyB]
-
-    # Prends RDV pour signer la promesse de vente
-    def signerPromesseVente(self):
-        pass
-        #récupérer l'acheteur et le vendeur
-        agence.Agence.vendeur
-        agence.Agence.acheteur
