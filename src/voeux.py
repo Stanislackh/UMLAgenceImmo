@@ -46,7 +46,6 @@ class Voeux:
             Voeux.listeVoeux[Voeux.keyL] = type, Personnes.ajouterClient(self), self.prixSouhaite, self.nbPieces
 
     def checkVoeux(self):
-        #Compliqué AF
 
         #les voeux
         infos = []
