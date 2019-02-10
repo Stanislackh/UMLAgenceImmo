@@ -50,25 +50,6 @@ class Agence:
     #Initialise la liste des annonces
     annonce = {}
 
-    # #Inscrit un Acheteur potentiel
-    # def inscriptionAcheteur(self, type = "r"):
-    #
-    #     #Incrémente les acheteur
-    #     Agence.keyA += 1
-    #
-    #     while (type != "physique") and (type != "morale"):
-    #         type = input("Tapez physique pour inscrire une personne ou morale pour une entreprise : ")
-    #
-    #         #Vendeur Physique
-    #         if type.lower() == "physique":
-    #             #Ajoute le vendeur au dictionnaire
-    #             Agence.acheteur[Agence.keyA] = Personnes.ajouterClient(self)
-    #
-    #         #Vendeur Morale
-    #         elif type.lower() == "morale":
-    #             #Ajoute le vendeur au dicotionnaire
-    #             Agence.acheteur[Agence.keyA] = Morale.ajouterPersonneMorale(self)
-
     def __str__(self):
         return str(Agence.vendeur)
 
